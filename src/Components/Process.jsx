@@ -164,7 +164,7 @@ const Process = () => {
             delivering exceptional results that help your business grow.
           </p>
           <div className="flex justify-center">
-            <button className="bg-primary text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:bg-blue-600 transition-colors">
+            <button className="bg-primary text-black font-medium py-3 px-8 rounded-lg shadow-lg hover:bg-blue-600  hover:text-white transition-colors">
               Get a Free Consultation
             </button>
           </div>

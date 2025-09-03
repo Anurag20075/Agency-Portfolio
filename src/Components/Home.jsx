@@ -40,13 +40,13 @@ const Hero = () => {
           <div className="md:w-1/2 flex justify-center animate-fade-in animation-delay-500">
             <div className="relative">
               {/* Abstract geometric background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-2xl opacity-20 blur-xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-400 to-indigo-500 rounded-2xl opacity-20 blur-xl"></div>
 
               {/* Main image container */}
               <div className="relative bg-white rounded-2xl shadow-xl p-2">
                 <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
                   {/* Placeholder for actual image */}
-                  <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
+                  <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-indigo-100 to-indigo-100 flex items-center justify-center">
                     <div className="text-center">
                       <div className="inline-block p-4 bg-white rounded-full shadow-md mb-4">
                         <svg
@@ -74,7 +74,7 @@ const Hero = () => {
 
               {/* Floating elements for visual interest */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-indigo-500 rounded-lg opacity-80 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500 rounded-full opacity-80 animate-pulse animation-delay-1000"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-indigo-500 rounded-full opacity-80 animate-pulse animation-delay-1000"></div>
             </div>
           </div>
         </div>

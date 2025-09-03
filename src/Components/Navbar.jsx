@@ -27,14 +27,14 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="text-2xl font-bold text-purple-600 hover:text-purple-700 transition-colors"
+          className="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors"
         >
           <motion.span
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="inline-block"
           >
-            Dev<span className="text-gray-900">Agency</span>
+            Web<span className="text-gray-900">Spire</span>
           </motion.span>
         </a>
         <div className="md:flex space-x-8">
@@ -45,7 +45,7 @@ export default function Navbar() {
                 href={`#${item}`}
                 whileHover={{ scale: 1.05, color: "#9333EA" }}
                 transition={{ duration: 0.2 }}
-                className="text-gray-700 hover:text-purple-800 transition-colors hover:underline hover:underline-offset-4"
+                className="text-gray-700 hover:text-indigo-800 transition-colors hover:underline hover:underline-offset-4"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </motion.a>
@@ -55,14 +55,14 @@ export default function Navbar() {
         {/* CTA */}
         <Link
           to="contact"
-          className="hidden md:block bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-medium transform hover:scale-105 transition-all shadow-md hover:shadow-lg"
+          className="hidden md:block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-full font-medium transform hover:scale-105 transition-all shadow-md hover:shadow-lg"
         >
           Get in Touch
         </Link>
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700 hover:text-purple-600 transition-colors"
+          className="md:hidden text-gray-700 hover:text-indigo-600 transition-colors"
         >
           <span className="material-symbols-outlined">
             {isOpen ? "close" : "menu"}
@@ -87,7 +87,7 @@ export default function Navbar() {
                   href={`${item}`}
                   onClick={() => setIsOpen(false)}
                   whileTap={{ scale: 0.95 }}
-                  className="text-gray-700 hover:text-purple-600 transition-colors text-lg"
+                  className="text-gray-700 hover:text-indigo-600 transition-colors text-lg"
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </motion.a>

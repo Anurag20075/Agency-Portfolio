@@ -117,7 +117,7 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-purple-600 font-medium text-sm flex items-center"
+                    className="text-primary hover:text-indigo-600 font-medium text-sm flex items-center"
                   >
                     <svg
                       className="w-4 h-4 mr-1"

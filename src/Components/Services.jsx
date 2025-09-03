@@ -146,7 +146,7 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-
+        {/* 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,8 +159,8 @@ const Services = () => {
             Transparent pricing for projects of all sizes. Choose the package
             that fits your needs.
           </p>
-        </motion.div>
-
+        </motion.div> */}
+        {/* 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
             <motion.div
@@ -175,13 +175,15 @@ const Services = () => {
             >
               <div
                 className={`p-6 ${
-                  pkg.highlighted ? "bg-primary text-white" : "bg-white"
+                  pkg.highlighted
+                    ? "bg-primary font-bold text-black"
+                    : "bg-white"
                 }`}
               >
-                <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
+                <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
                 <p
-                  className={`text-2xl font-bold mb-4 ${
-                    pkg.highlighted ? "text-white" : "text-primary"
+                  className={`text-3xl font-bold mb-4 ${
+                    pkg.highlighted ? "text-black" : "text-primary"
                   }`}
                 >
                   {pkg.price}
@@ -212,7 +214,7 @@ const Services = () => {
                 <button
                   className={`w-full py-2 px-4 rounded-lg font-medium ${
                     pkg.highlighted
-                      ? "bg-primary text-white hover:bg-purple-600"
+                      ? "bg-primary text-white hover:bg-indigo-600"
                       : "bg-gray-200 text-gray-800 hover:bg-gray-300"
                   } transition-colors`}
                 >
@@ -221,7 +223,7 @@ const Services = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
