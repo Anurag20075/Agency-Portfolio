@@ -101,7 +101,7 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What I Offer</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Offer</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Outcome-driven solutions tailored to your business needs, not just
             technical services.
