@@ -4,48 +4,44 @@ import { motion } from "framer-motion";
 const Services = () => {
   const services = [
     {
-      title: "Website Development",
-      description:
-        "Custom websites built with modern technologies that load fast, convert visitors, and represent your brand professionally.",
-      features: [
-        "Responsive Design",
-        "SEO Optimization",
-        "Performance Tuning",
-        "Cross-browser Compatibility",
-      ],
+      title: "Web Development",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
+      description: "Custom websites built with modern technologies that load fast and represent your brand professionally.",
+      features: ["Responsive Design", "Next.js / React", "Performance Tuning"],
     },
     {
       title: "UI/UX Design",
-      description:
-        "User-centered design solutions that create intuitive experiences and guide visitors toward conversion.",
-      features: [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
-        "Design Systems",
-      ],
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z" />
+        </svg>
+      ),
+      description: "User-centered design solutions that create intuitive experiences and guide visitors toward conversion.",
+      features: ["Wireframing", "Design Systems", "Prototyping"],
     },
     {
-      title: "Performance Optimization",
-      description:
-        "Speed up your website to improve user experience, reduce bounce rates, and increase search rankings.",
-      features: [
-        "Code Optimization",
-        "Image Optimization",
-        "Caching Strategies",
-        "CDN Implementation",
-      ],
+      title: "SEO & Speed",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      description: "Speed up your website to improve user experience, reduce bounce rates, and increase search rankings.",
+      features: ["Code Optimization", "Core Web Vitals", "Caching"],
     },
     {
-      title: "AI-driven Enhancements",
-      description:
-        "Leverage artificial intelligence to create smarter, more personalized user experiences.",
-      features: [
-        "Chatbots",
-        "Personalization Engines",
-        "Content Generation",
-        "Predictive Analytics",
-      ],
+      title: "AI Solutions",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+      description: "Leverage artificial intelligence to create smarter, more personalized user experiences.",
+      features: ["Custom Chatbots", "Personalization", "Automation"],
     },
   ];
 
@@ -53,177 +49,118 @@ const Services = () => {
     {
       name: "Starter",
       price: "$1,500",
-      features: [
-        "Custom Design",
-        "Up to 5 Pages",
-        "Mobile Responsive",
-        "Contact Form",
-        "Basic SEO",
-      ],
+      features: ["Custom Design", "Up to 5 Pages", "Mobile Responsive", "Basic SEO"],
       highlighted: false,
     },
     {
       name: "Professional",
       price: "$3,000",
-      features: [
-        "Everything in Starter",
-        "Up to 10 Pages",
-        "CMS Integration",
-        "Advanced SEO",
-        "Performance Optimization",
-        "3 Months Support",
-      ],
+      features: ["Everything in Starter", "CMS Integration", "Advanced SEO", "3 Months Support"],
       highlighted: true,
     },
     {
       name: "Enterprise",
-      price: "Custom Quote",
-      features: [
-        "Everything in Professional",
-        "Unlimited Pages",
-        "E-commerce Functionality",
-        "Custom Features",
-        "API Integration",
-        "6 Months Support",
-        "Priority Service",
-      ],
+      price: "Custom",
+      features: ["Everything in Pro", "E-commerce Hub", "API Integration", "Priority Service"],
       highlighted: false,
     },
   ];
 
   return (
-    <section id="services" className="py-20 bg-light">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-24 bg-slate-50">
+      <div className="container mx-auto px-6">
+        
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Offer</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Outcome-driven solutions tailored to your business needs, not just
-            technical services.
+          <h2 className="text-indigo-600 font-bold tracking-widest uppercase text-sm mb-3">Expertise</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Service Offerings</h3>
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+            I don't just build websites; I build digital tools that solve business problems and generate revenue.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+              transition={{ delay: index * 0.1 }}
+              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group"
             >
-              <h3 className="text-xl font-bold mb-3 text-primary">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+              <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                {service.icon}
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">{service.description}</p>
               <ul className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-secondary mr-2 mt-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      ></path>
-                    </svg>
-                    <span className="text-gray-700">{feature}</span>
+                {service.features.map((f, i) => (
+                  <li key={i} className="text-xs font-bold text-slate-400 flex items-center">
+                    <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2" /> {f}
                   </li>
                 ))}
               </ul>
             </motion.div>
           ))}
         </div>
-        {/* 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h3 className="text-2xl font-bold mb-4">Service Packages</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Transparent pricing for projects of all sizes. Choose the package
-            that fits your needs.
-          </p>
-        </motion.div> */}
-        {/* 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {/* Pricing Section */}
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold text-slate-900">Project Packages</h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-xl overflow-hidden shadow-lg ${
-                pkg.highlighted ? "ring-2 ring-primary transform scale-105" : ""
+              className={`relative p-8 rounded-[2rem] transition-all ${
+                pkg.highlighted 
+                ? "bg-slate-900 text-white shadow-2xl scale-105 z-10" 
+                : "bg-white text-slate-900 border border-slate-200"
               }`}
             >
-              <div
-                className={`p-6 ${
-                  pkg.highlighted
-                    ? "bg-primary font-bold text-black"
-                    : "bg-white"
-                }`}
-              >
-                <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                <p
-                  className={`text-3xl font-bold mb-4 ${
-                    pkg.highlighted ? "text-black" : "text-primary"
-                  }`}
-                >
-                  {pkg.price}
-                </p>
+              {pkg.highlighted && (
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+                  Most Popular
+                </span>
+              )}
+              <h4 className={`text-xl font-bold mb-2 ${pkg.highlighted ? "text-indigo-400" : "text-slate-900"}`}>
+                {pkg.name}
+              </h4>
+              <div className="flex items-baseline gap-1 mb-8">
+                <span className="text-4xl font-black">{pkg.price}</span>
+                {pkg.price !== "Custom" && <span className="text-sm opacity-60">/project</span>}
               </div>
-              <div className="bg-white p-6">
-                <ul className="space-y-3 mb-6">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <svg
-                        className="w-5 h-5 text-secondary mr-2 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className={`w-full py-2 px-4 rounded-lg font-medium ${
-                    pkg.highlighted
-                      ? "bg-primary text-white hover:bg-indigo-600"
-                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  } transition-colors`}
-                >
-                  Get Started
-                </button>
-              </div>
+              <ul className="space-y-4 mb-10">
+                {pkg.features.map((feature, i) => (
+                  <li key={i} className="flex items-center text-sm">
+                    <svg className={`w-5 h-5 mr-3 ${pkg.highlighted ? "text-indigo-400" : "text-indigo-600"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className={pkg.highlighted ? "text-slate-300" : "text-slate-600"}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className={`w-full py-4 rounded-xl font-bold text-sm transition-all ${
+                pkg.highlighted 
+                ? "bg-indigo-600 hover:bg-indigo-500 text-white" 
+                : "bg-slate-100 hover:bg-slate-200 text-slate-900"
+              }`}>
+                Start Project
+              </button>
             </motion.div>
           ))}
-        </div> */}
+        </div>
       </div>
     </section>
   );

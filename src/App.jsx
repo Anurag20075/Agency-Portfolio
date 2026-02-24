@@ -1,43 +1,35 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Hero from "./Components/Home";
+import Hero from "./Components/Home"; // Assuming this is your main Hero
 import Projects from "./Components/Projects";
 import Services from "./Components/Services";
 import About from "./Components/About";
 import Testimonials from "./Components/Testimonials";
 import Process from "./Components/Process";
 import Contact from "./Components/Contact";
-// import Footer from "./Components/Footer";
-// import HeroPage from "./Components/Hero";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-            </>
-          }
-        />
-        <Route path="/home" element={<Hero />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/process" element={<Process />} />
-      </Routes>
+      <div className="bg-white selection:bg-indigo-100 selection:text-indigo-900">
+        <Navbar />
+        
+        {/* All sections stacked for smooth scrolling */}
+        <main>
+          <Hero />
+          <Services />
+          <Projects />
+          <About />
+          <Process />
+          <Testimonials />
+          <Contact />
+        </main>
+
+        <Footer />
+      </div>
     </Router>
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<HeroPage />} />
-    //   </Routes>
-    //   <Footer />
-    // </Router>
   );
 }
 

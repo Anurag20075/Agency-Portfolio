@@ -5,119 +5,88 @@ import { Link } from "react-scroll";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const navLinks = [
+    { name: "Home", target: "/" },
+    { name: "Projects", target: "projects" },
+    { name: "Services", target: "services" },
+    { name: "Contact", target: "contact" },
+  ];
+
+  // Animation Variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.5 }
+  };
+
   return (
-    <footer className="bg-dark text-white py-12 border-t">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-6 md:mb-0"
-          >
-            <div className="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors mb-2">
-              <motion.span
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="inline-block"
-              >
-                Web<span className="text-indigo-900">Spire</span>
-              </motion.span>
-            </div>
-            <p className="text-3xl text-black max-w-md">
-              Building fast, conversion-focused websites that turn visitors into
-              clients.
+    <footer className="bg-slate-900 text-gray-300 py-12 border-t border-slate-800">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+          
+          {/* Brand Section */}
+          <motion.div {...fadeInUp}>
+            <Link to="/" smooth={true} className="cursor-pointer">
+              <div className="text-2xl font-bold mb-4">
+                <span className="text-indigo-500">Web</span>
+                <span className="text-white">Spire</span>
+              </div>
+            </Link>
+            <p className="text-lg leading-relaxed max-w-sm">
+              Building fast, conversion-focused websites that turn visitors into clients.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-6 md:mb-0"
+          {/* Navigation Links */}
+          <motion.div 
+            {...fadeInUp} 
+            transition={{ ...fadeInUp.transition, delay: 0.2 }}
+            className="flex flex-col"
           >
-            <h3 className="text-2xl text-black  font-semibold mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className="text-black text-xl font-semibold  transition-colors cursor-pointer"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className="text-black text-xl font-semibold  transition-colors cursor-pointer"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className="text-black text-xl font-semibold  transition-colors cursor-pointer"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className="text-black text-xl font-semibold  transition-colors cursor-pointer"
-                >
-                  Contact
-                </Link>
-              </li>
+            <h3 className="text-white text-xl font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.target}
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    className="hover:text-indigo-400 transition-colors cursor-pointer text-lg"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+          {/* CTA Section */}
+          <motion.div 
+            {...fadeInUp} 
+            transition={{ ...fadeInUp.transition, delay: 0.4 }}
           >
-            <h3 className="text-2xl text-black font-semibold mb-4">
-              Let's Connect
-            </h3>
+            <h3 className="text-white text-xl font-semibold mb-6">Ready to start?</h3>
             <Link
               to="contact"
-              spy={true}
               smooth={true}
-              duration={500}
-              className="inline-block bg-primary text-black text-xl font-medium py-2 px-6 rounded-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer shadow-md hover:shadow-lg"
+              className="inline-block bg-indigo-600 text-white font-medium py-3 px-8 rounded-full hover:bg-indigo-500 transition-all cursor-pointer shadow-lg hover:shadow-indigo-500/20"
             >
               Get In Touch
             </Link>
           </motion.div>
         </div>
 
+        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="  mt-8 pt-8 text-center text-indigo-400"
+          transition={{ delay: 0.6 }}
+          className="mt-16 pt-8 border-t border-slate-800 text-center text-sm"
         >
-          <p>&copy; {currentYear} DevPortfolio. All rights reserved.</p>
+          <p>&copy; {currentYear} DevPortfolio. Crafted with passion.</p>
         </motion.div>
       </div>
     </footer>
