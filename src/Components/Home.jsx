@@ -59,7 +59,6 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - The Image Block (Layout Kept Same, CSS Enhanced) */}
           <motion.div 
             className="lg:w-1/2 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
