@@ -49,7 +49,7 @@ export default function Navbar() {
           onClick={(e) => scrollToSection(e, "home")}
           className="text-2xl font-bold text-indigo-600"
         >
-          Web<span className="text-gray-900">Spire</span>
+          Elevate<span className="text-gray-900">Webwork</span>
         </a>
 
         {/* Desktop Links */}
