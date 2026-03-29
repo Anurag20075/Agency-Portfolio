@@ -31,13 +31,23 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
+            {/* Main Headline */}
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-4"
             >
               I build <span className="text-indigo-600">conversion-focused</span> websites.
             </motion.h1>
 
+            {/* Subheading */}
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg md:text-xl text-indigo-600 font-semibold mb-6"
+            >
+              For agencies and SaaS companies that want measurable results.
+            </motion.p>
+
+            {/* Description */}
             <motion.p 
               variants={itemVariants}
               className="text-lg md:text-xl text-slate-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
@@ -46,70 +56,126 @@ const Hero = () => {
               exceptional digital experiences that turn ideas into reality.
             </motion.p>
 
+            {/* CTA Buttons */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
             >
-              <button className="w-full sm:w-auto px-10 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 hover:shadow-indigo-300 transform hover:-translate-y-1">
-                View My Work
+              <button className="w-full sm:w-auto px-10 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 hover:shadow-indigo-300 transform hover:-translate-y-1 active:translate-y-0">
+                See My Projects
               </button>
-              <button className="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 font-bold rounded-2xl border border-slate-200 hover:border-indigo-600 transition-all transform hover:-translate-y-1">
-                Let's Talk
+              <button className="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 font-bold rounded-2xl border-2 border-slate-200 hover:border-indigo-600 hover:bg-indigo-50 transition-all transform hover:-translate-y-1 active:translate-y-0">
+                Schedule a Call
               </button>
             </motion.div>
+
           </motion.div>
 
+          {/* Right Column - Image (IMPROVED) */}
           <motion.div 
-            className="lg:w-1/2 flex justify-center"
+            className="lg:w-1/2 w-full flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <div className="relative">
-              {/* Abstract geometric background */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-3xl opacity-20 blur-2xl animate-pulse"></div>
+            {/* OPTION 1: 3D Perspective Website Mockup (Recommended) */}
+            <div className="relative w-full max-w-lg perspective">
+              {/* Glow background */}
+              <div className="absolute -inset-8 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-3xl opacity-30 blur-3xl animate-pulse"></div>
 
-              {/* Main image container */}
-              <div className="relative bg-white rounded-3xl shadow-2xl p-3 border border-slate-100">
-                <div className="rounded-2xl overflow-hidden bg-slate-50">
-                  <div className="w-full h-72 md:h-96 lg:w-[500px] bg-gradient-to-br from-indigo-50 to-white flex items-center justify-center">
+              {/* Main card container with perspective */}
+              <motion.div
+                className="relative"
+                whileHover={{ rotateY: 5, rotateX: -5 }}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                {/* Card */}
+                <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
+                  {/* Card header (browser-like) */}
+                  <div className="bg-gradient-to-r from-slate-100 to-slate-50 px-6 py-4 border-b border-slate-200 flex items-center gap-3">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                    </div>
+                    <div className="ml-4 text-xs text-slate-500 font-medium">yourportfolio.com</div>
+                  </div>
+
+                  {/* Main image content area */}
+                  <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 aspect-video flex items-center justify-center relative overflow-hidden">
+                    {/* Animated gradient overlay */}
+                    <motion.div
+                      className="absolute inset-0 opacity-40"
+                      style={{
+                        background: "radial-gradient(circle at 30% 50%, rgba(79, 70, 229, 0.3), transparent 50%)"
+                      }}
+                      animate={{
+                        backgroundPosition: ["0% 0%", "100% 100%"],
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 8,
+                        ease: "linear",
+                      }}
+                    />
+
+                    {/* Floating image with better animation */}
+                    <motion.div 
+                      className="relative z-10"
+                      animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
+                      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                    >
+                      <img 
+                        src="https://i.pinimg.com/736x/77/b3/ab/77b3abd02c7e4079c91068d0204ed4b9.jpg" 
+                        alt="Project Showcase" 
+                        className="h-100 w-auto object-contain drop-shadow-2xl"
+                      />
+                    </motion.div>
+                  </div>
+
+                  {/* Card footer with stats */}
+                  <div className="px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100/50 border-t border-slate-200 flex justify-between items-center">
                     <div className="text-center">
-                      <motion.div 
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                        className="inline-block p-5 bg-white rounded-2xl shadow-lg mb-4"
-                      >
-                        <svg className="h-12 w-12 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
-                      </motion.div>
-                      <p className="text-slate-400 font-semibold uppercase tracking-widest text-xs">
-                        Engineer // Designer
-                      </p>
+                      <p className="text-xs text-slate-500 uppercase tracking-wider">Performance</p>
+                      <p className="text-lg font-bold text-indigo-600">98/100</p>
+                    </div>
+                    <div className="h-8 w-px bg-slate-200"></div>
+                    <div className="text-center">
+                      <p className="text-xs text-slate-500 uppercase tracking-wider">Load Time</p>
+                      <p className="text-lg font-bold text-indigo-600">1.2s</p>
+                    </div>
+                    <div className="h-8 w-px bg-slate-200"></div>
+                    <div className="text-center">
+                      <p className="text-xs text-slate-500 uppercase tracking-wider">SEO Score</p>
+                      <p className="text-lg font-bold text-indigo-600">100</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Floating elements */}
+              {/* Tech Stack Badges */}
               <motion.div 
-                animate={{ y: [0, 20, 0], rotate: [0, 10, 0] }}
+                animate={{ y: [0, 15, 0] }}
                 transition={{ repeat: Infinity, duration: 4 }}
-                className="absolute -top-6 -right-6 w-20 h-20 bg-indigo-600 rounded-2xl opacity-90 shadow-xl flex items-center justify-center text-white font-bold text-3xl"
+                className="absolute -top-6 -right-6 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-2xl px-5 py-3 text-white font-semibold z-20"
               >
-                JS
+                <div className="text-sm">React + Next.js</div>
               </motion.div>
-              
-              <motion.div 
-                animate={{ y: [0, -20, 0] }}
-                transition={{ repeat: Infinity, duration: 5, delay: 1 }}
-                className="absolute -bottom-8 -left-8 w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center border border-slate-100"
+
+              {/* Performance Badge */}
+              {/* <motion.div 
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 5 }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-full shadow-2xl w-20 h-20 flex flex-col items-center justify-center border-2 border-indigo-100 z-20"
               >
-                <div className="w-8 h-8 bg-indigo-100 rounded-full animate-ping" />
-              </motion.div>
+                <div className="text-3xl font-bold text-indigo-600">98</div>
+                <div className="text-xs text-slate-600 font-semibold text-center">Lighthouse<br/>Score</div>
+              </motion.div> */}
             </div>
           </motion.div>
         </div>
+
+      
       </div>
     </section>
   );
