@@ -65,44 +65,43 @@ const About = () => {
             className="lg:w-3/5"
           >
             <h2 className="text-indigo-600 font-bold tracking-widest uppercase text-sm mb-3">
-              About Me
+              About Us
             </h2>
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              I build websites that{" "}
+              We build websites that{" "}
               <span className="text-indigo-600">
                 grow your business.
               </span>
             </h3>
 
             <p className="text-xl text-slate-700 font-medium mb-6">
-              I'm [Your Name] — a Web Developer & Freelancer from [Your
-              City], India, helping startups and small businesses turn their
+              We are a Web Developer Agency from Agra, India, helping startups and small businesses turn their
               online presence into a customer-generating machine.
             </p>
 
             <div className="space-y-4 text-slate-600 mb-8 leading-relaxed">
               <p>
                 What started as a curiosity about how lines of code transform
-                into stunning visuals has now become my mission — to help
-                businesses stand out online. I specialize in{" "}
+                into stunning visuals has now become our mission — to help
+                businesses stand out online. We specialize in{" "}
                 <strong>React, Next.js, and modern web technologies</strong>{" "}
                 to build fast, responsive, and conversion-focused websites
                 that don't just look great — they deliver real results.
               </p>
               <p>
-                I don't believe in one-size-fits-all. Every business is
+                We don't believe in one-size-fits-all. Every business is
                 unique, and so should be its website. From{" "}
                 <strong>
                   e-commerce stores and landing pages to full-stack web
                   applications
                 </strong>
-                , I work closely with my clients to understand their goals and
+                , We work closely with our clients to understand their goals and
                 craft digital solutions that help them attract more customers,
                 build trust, and scale faster.
               </p>
               <p>
                 Currently pursuing my <strong>MCA</strong> while
-                simultaneously scaling my freelance operations — because I
+                simultaneously scaling our freelance operations — because I
                 believe the best way to learn is by building real products for
                 real people.
               </p>
@@ -148,7 +147,7 @@ const About = () => {
                 <div>
                   <h4 className="font-bold text-slate-900">Education</h4>
                   <p className="text-sm text-slate-600">
-                    BSc Computer Science
+                    Bachelor of Computer Applications
                     <br />
                     (MCA Pursuing)
                   </p>
